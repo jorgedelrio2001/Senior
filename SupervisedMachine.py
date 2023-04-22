@@ -8,11 +8,11 @@ from sklearn.metrics import accuracy_score, classification_report
 from sklearn.preprocessing import StandardScaler
 
 # Load the dataset
-data = pd.read_csv('heart_cleveland_upload.csv')
+data = pd.read_csv('Cancer_Data.csv')
 
 # Preprocess data
-X = data.drop('condition', axis=1)
-y = data['condition']
+X = data.drop('diagnosis', axis=1)
+y = data['diagnosis']
 
 # Split into training and testing sets
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -54,3 +54,4 @@ print(classification_report(y_test, y_pred_dt))
 
 print("Random Forest Classifier Classification Report:")
 print(classification_report(y_test, y_pred_rf))
+
